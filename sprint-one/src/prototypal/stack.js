@@ -8,10 +8,10 @@ var Stack = function() {
 
 var stackMethods = {
   push: function(value) {
-    this.storage[Object.keys(this.storage).length] = value;
+    this.storage[this.size()] = value;
   },
   pop: function() {
-    var length = Object.keys(this.storage).length;
+    var length = this.size();
     if(length > 0) {
       var popped = this.storage[length - 1];
       delete this.storage[length - 1];
