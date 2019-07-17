@@ -3,23 +3,23 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var firstInLine = 0;
-  var i = 0;
+  var first = 0;
+  var last = 0;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    storage[i] = value;
-    i++;
+    storage[last] = value;
+    last++;
   };
 
   someInstance.dequeue = function() {
     if (someInstance.size() > 0) {
-      var popped = storage[firstInLine];
-      delete storage[firstInLine];
-      firstInLine += 1;
+      var dequeued = storage[first];
+      delete storage[first];
+      first += 1;
     }
-    return popped;
+    return dequeued;
   };
 
   someInstance.size = function() {

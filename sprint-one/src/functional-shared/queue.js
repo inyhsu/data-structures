@@ -4,8 +4,8 @@ var Queue = function() {
   var someInstance = {};
 
   someInstance.storage = {};
-  someInstance.firstInLine = 0;
-  someInstance.i = 0;
+  someInstance.first = 0;
+  someInstance.last = 0;
 
   extend(someInstance, queueMethods);
 
@@ -25,17 +25,17 @@ var extend = function(obj, methods) {
 
 var queueMethods = {
 	enqueue: function(value) {
-		this.storage[this.i] = value;
-		this.i++;
+		this.storage[this.last] = value;
+		this.last++;
 
 	},
 	dequeue: function() {
-		if(Object.keys(this.storage).length > 0) {
-			var popped = this.storage[this.firstInLine];
-			delete this.storage[this.firstInLine];
-			this.firstInLine += 1;
+		if(this.size() > 0) {
+			var dequeued = this.storage[this.first];
+			delete this.storage[this.first];
+			this.first += 1;
 		}
-		return popped;
+		return dequeued;
 
 	}, 
 	size: function() {
