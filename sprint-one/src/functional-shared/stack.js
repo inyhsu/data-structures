@@ -23,7 +23,6 @@ var extend = function(obj, methods) {
 
 var stackMethods = {
   push: function(value) {
-    console.log("pushing");
     this.storage[Object.keys(this.storage).length] = value;
   },  
   pop: function () {
