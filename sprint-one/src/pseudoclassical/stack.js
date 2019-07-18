@@ -15,5 +15,3 @@ Stack.prototype.pop = function(value) {
 Stack.prototype.size = function() {
   return Object.keys(this.storage).length;
 };
-
-

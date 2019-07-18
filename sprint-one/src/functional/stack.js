@@ -8,7 +8,6 @@ var Stack = function() {
   someInstance.push = function(value) {
     storage[someInstance.size()] = value;
   };
-
   someInstance.pop = function() {
     if (someInstance.size() > 0) {
       var popped = storage[someInstance.size() - 1];
@@ -17,10 +16,8 @@ var Stack = function() {
     return popped;
 
   };
-
   someInstance.size = function() {
     return Object.keys(storage).length;
   };
-
   return someInstance;
 };

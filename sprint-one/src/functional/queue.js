@@ -12,7 +12,6 @@ var Queue = function() {
     storage[last] = value;
     last++;
   };
-
   someInstance.dequeue = function() {
     if (someInstance.size() > 0) {
       var dequeued = storage[first];
@@ -25,6 +24,5 @@ var Queue = function() {
   someInstance.size = function() {
     return Object.keys(storage).length;
   };
-
   return someInstance;
 };

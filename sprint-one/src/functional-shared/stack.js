@@ -8,14 +8,12 @@ var Stack = function() {
   extend(someInstance, stackMethods);
 
   return someInstance;
-
-
 };
 
 var extend = function(obj, methods) {
   var keys = Object.keys(methods);
   var length = keys.length;
-  for(var i = 0; i < length; i++) {
+  for (var i = 0; i < length; i++) {
     obj[keys[i]] = methods[keys[i]];
 
   }
@@ -26,10 +24,10 @@ var stackMethods = {
     this.storage[this.size()] = value;
   },  
   pop: function () {
-  	var length = this.size();
-    if(length > 0) {
-    	var popped = this.storage[length - 1];
-    	delete this.storage[length - 1];
+    var length = this.size();
+    if (length > 0) {
+      var popped = this.storage[length - 1];
+      delete this.storage[length - 1];
     }
     return popped;
   },
